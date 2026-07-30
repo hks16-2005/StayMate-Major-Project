@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayMate</title>
+</head>
+<body>
+    <h2>Edit Listing with id: <%= listing._id %></h2>
+    <form method="POST" action="/listings/<%=listing.id%>?_method=PUT">
+        <input type="text" value="<%= listing.title %>" name="listing[title]"><br><br>
+        <textarea cols="40" rows="5" name="listing[description]"><%= listing.description %></textarea><br><br>
+        <input value="<%= listing.image %>" type="text" placeholder="Enter image url" name="listing[image]"><br><br>
+        <input value="<%= listing.price %>" type="number" name="listing[price]"><br><br>
+        <input value="<%= listing.location %>" type="text"  name="listing[location]"><br><br>
+        <input value="<%= listing.country %>" type="text"  name="listing[country]"><br><br>
+        <button>Update</button>
+    </form>
+</body>
+</html>
